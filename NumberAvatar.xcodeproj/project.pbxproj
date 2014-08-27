@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A11B6C5019AE23170062FAF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11B6C4F19AE23170062FAF9 /* Foundation.framework */; };
+		A11B6C5219AE23170062FAF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11B6C5119AE23170062FAF9 /* CoreGraphics.framework */; };
+		A11B6C5419AE23170062FAF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11B6C5319AE23170062FAF9 /* UIKit.framework */; };
+		A11B6C5A19AE23170062FAF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A11B6C5819AE23170062FAF9 /* InfoPlist.strings */; };
+		A11B6C5C19AE23170062FAF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A11B6C5B19AE23170062FAF9 /* main.m */; };
+		A11B6C6019AE23170062FAF9 /* NAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A11B6C5F19AE23170062FAF9 /* NAAppDelegate.m */; };
+		A11B6C6319AE23170062FAF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A11B6C6119AE23170062FAF9 /* Main.storyboard */; };
+		A11B6C6619AE23170062FAF9 /* NAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A11B6C6519AE23170062FAF9 /* NAViewController.m */; };
+		A11B6C6819AE23170062FAF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A11B6C6719AE23170062FAF9 /* Images.xcassets */; };
+		A11B6C6F19AE23170062FAF9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11B6C6E19AE23170062FAF9 /* XCTest.framework */; };
+		A11B6C7019AE23170062FAF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11B6C4F19AE23170062FAF9 /* Foundation.framework */; };
+		A11B6C7119AE23170062FAF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11B6C5319AE23170062FAF9 /* UIKit.framework */; };
+		A11B6C7919AE23170062FAF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A11B6C7719AE23170062FAF9 /* InfoPlist.strings */; };
+		A11B6C7B19AE23170062FAF9 /* NumberAvatarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A11B6C7A19AE23170062FAF9 /* NumberAvatarTests.m */; };
+		A11B6C8619AE270D0062FAF9 /* ProjectSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = A11B6C8519AE270D0062FAF9 /* ProjectSettings.m */; };
+		A1B43C8819AE57C00056D534 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B43C8719AE57C00056D534 /* iAd.framework */; };
+		DBBD08D850AA42D8BC9D479A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D8A178B1CB41BAA768B133 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A11B6C7219AE23170062FAF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A11B6C4419AE23160062FAF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A11B6C4B19AE23160062FAF9;
+			remoteInfo = NumberAvatar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A11B6C4C19AE23170062FAF9 /* NumberAvatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumberAvatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A11B6C4F19AE23170062FAF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A11B6C5119AE23170062FAF9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A11B6C5319AE23170062FAF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A11B6C5719AE23170062FAF9 /* NumberAvatar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NumberAvatar-Info.plist"; sourceTree = "<group>"; };
+		A11B6C5919AE23170062FAF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A11B6C5B19AE23170062FAF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A11B6C5D19AE23170062FAF9 /* NumberAvatar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NumberAvatar-Prefix.pch"; sourceTree = "<group>"; };
+		A11B6C5E19AE23170062FAF9 /* NAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAAppDelegate.h; sourceTree = "<group>"; };
+		A11B6C5F19AE23170062FAF9 /* NAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NAAppDelegate.m; sourceTree = "<group>"; };
+		A11B6C6219AE23170062FAF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A11B6C6419AE23170062FAF9 /* NAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAViewController.h; sourceTree = "<group>"; };
+		A11B6C6519AE23170062FAF9 /* NAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NAViewController.m; sourceTree = "<group>"; };
+		A11B6C6719AE23170062FAF9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A11B6C6D19AE23170062FAF9 /* NumberAvatarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumberAvatarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A11B6C6E19AE23170062FAF9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A11B6C7619AE23170062FAF9 /* NumberAvatarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NumberAvatarTests-Info.plist"; sourceTree = "<group>"; };
+		A11B6C7819AE23170062FAF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A11B6C7A19AE23170062FAF9 /* NumberAvatarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NumberAvatarTests.m; sourceTree = "<group>"; };
+		A11B6C8419AE270D0062FAF9 /* ProjectSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectSettings.h; sourceTree = "<group>"; };
+		A11B6C8519AE270D0062FAF9 /* ProjectSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectSettings.m; sourceTree = "<group>"; };
+		A1B43C8719AE57C00056D534 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		CE02E5BB18DF4B27B78A4684 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		D9D8A178B1CB41BAA768B133 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A11B6C4919AE23160062FAF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B43C8819AE57C00056D534 /* iAd.framework in Frameworks */,
+				A11B6C5219AE23170062FAF9 /* CoreGraphics.framework in Frameworks */,
+				A11B6C5419AE23170062FAF9 /* UIKit.framework in Frameworks */,
+				A11B6C5019AE23170062FAF9 /* Foundation.framework in Frameworks */,
+				DBBD08D850AA42D8BC9D479A /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A11B6C6A19AE23170062FAF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A11B6C6F19AE23170062FAF9 /* XCTest.framework in Frameworks */,
+				A11B6C7119AE23170062FAF9 /* UIKit.framework in Frameworks */,
+				A11B6C7019AE23170062FAF9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A11B6C4319AE23160062FAF9 = {
+			isa = PBXGroup;
+			children = (
+				A11B6C5519AE23170062FAF9 /* NumberAvatar */,
+				A11B6C7419AE23170062FAF9 /* NumberAvatarTests */,
+				A11B6C4E19AE23170062FAF9 /* Frameworks */,
+				A11B6C4D19AE23170062FAF9 /* Products */,
+				CE02E5BB18DF4B27B78A4684 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		A11B6C4D19AE23170062FAF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A11B6C4C19AE23170062FAF9 /* NumberAvatar.app */,
+				A11B6C6D19AE23170062FAF9 /* NumberAvatarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A11B6C4E19AE23170062FAF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1B43C8719AE57C00056D534 /* iAd.framework */,
+				A11B6C4F19AE23170062FAF9 /* Foundation.framework */,
+				A11B6C5119AE23170062FAF9 /* CoreGraphics.framework */,
+				A11B6C5319AE23170062FAF9 /* UIKit.framework */,
+				A11B6C6E19AE23170062FAF9 /* XCTest.framework */,
+				D9D8A178B1CB41BAA768B133 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A11B6C5519AE23170062FAF9 /* NumberAvatar */ = {
+			isa = PBXGroup;
+			children = (
+				A11B6C8419AE270D0062FAF9 /* ProjectSettings.h */,
+				A11B6C8519AE270D0062FAF9 /* ProjectSettings.m */,
+				A11B6C5E19AE23170062FAF9 /* NAAppDelegate.h */,
+				A11B6C5F19AE23170062FAF9 /* NAAppDelegate.m */,
+				A11B6C6119AE23170062FAF9 /* Main.storyboard */,
+				A11B6C6419AE23170062FAF9 /* NAViewController.h */,
+				A11B6C6519AE23170062FAF9 /* NAViewController.m */,
+				A11B6C6719AE23170062FAF9 /* Images.xcassets */,
+				A11B6C5619AE23170062FAF9 /* Supporting Files */,
+			);
+			path = NumberAvatar;
+			sourceTree = "<group>";
+		};
+		A11B6C5619AE23170062FAF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A11B6C5719AE23170062FAF9 /* NumberAvatar-Info.plist */,
+				A11B6C5819AE23170062FAF9 /* InfoPlist.strings */,
+				A11B6C5B19AE23170062FAF9 /* main.m */,
+				A11B6C5D19AE23170062FAF9 /* NumberAvatar-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A11B6C7419AE23170062FAF9 /* NumberAvatarTests */ = {
+			isa = PBXGroup;
+			children = (
+				A11B6C7A19AE23170062FAF9 /* NumberAvatarTests.m */,
+				A11B6C7519AE23170062FAF9 /* Supporting Files */,
+			);
+			path = NumberAvatarTests;
+			sourceTree = "<group>";
+		};
+		A11B6C7519AE23170062FAF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A11B6C7619AE23170062FAF9 /* NumberAvatarTests-Info.plist */,
+				A11B6C7719AE23170062FAF9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A11B6C4B19AE23160062FAF9 /* NumberAvatar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A11B6C7E19AE23170062FAF9 /* Build configuration list for PBXNativeTarget "NumberAvatar" */;
+			buildPhases = (
+				3DF8EED3B3D24418843565D8 /* Check Pods Manifest.lock */,
+				A11B6C4819AE23160062FAF9 /* Sources */,
+				A11B6C4919AE23160062FAF9 /* Frameworks */,
+				A11B6C4A19AE23160062FAF9 /* Resources */,
+				5E8727C758E842BEA0C53188 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NumberAvatar;
+			productName = NumberAvatar;
+			productReference = A11B6C4C19AE23170062FAF9 /* NumberAvatar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A11B6C6C19AE23170062FAF9 /* NumberAvatarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A11B6C8119AE23170062FAF9 /* Build configuration list for PBXNativeTarget "NumberAvatarTests" */;
+			buildPhases = (
+				A11B6C6919AE23170062FAF9 /* Sources */,
+				A11B6C6A19AE23170062FAF9 /* Frameworks */,
+				A11B6C6B19AE23170062FAF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A11B6C7319AE23170062FAF9 /* PBXTargetDependency */,
+			);
+			name = NumberAvatarTests;
+			productName = NumberAvatarTests;
+			productReference = A11B6C6D19AE23170062FAF9 /* NumberAvatarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A11B6C4419AE23160062FAF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NA;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = folse;
+				TargetAttributes = {
+					A11B6C4B19AE23160062FAF9 = {
+						DevelopmentTeam = 6XX8659PN2;
+					};
+					A11B6C6C19AE23170062FAF9 = {
+						TestTargetID = A11B6C4B19AE23160062FAF9;
+					};
+				};
+			};
+			buildConfigurationList = A11B6C4719AE23160062FAF9 /* Build configuration list for PBXProject "NumberAvatar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A11B6C4319AE23160062FAF9;
+			productRefGroup = A11B6C4D19AE23170062FAF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A11B6C4B19AE23160062FAF9 /* NumberAvatar */,
+				A11B6C6C19AE23170062FAF9 /* NumberAvatarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A11B6C4A19AE23160062FAF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A11B6C6819AE23170062FAF9 /* Images.xcassets in Resources */,
+				A11B6C5A19AE23170062FAF9 /* InfoPlist.strings in Resources */,
+				A11B6C6319AE23170062FAF9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A11B6C6B19AE23170062FAF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A11B6C7919AE23170062FAF9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3DF8EED3B3D24418843565D8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5E8727C758E842BEA0C53188 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A11B6C4819AE23160062FAF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A11B6C8619AE270D0062FAF9 /* ProjectSettings.m in Sources */,
+				A11B6C6619AE23170062FAF9 /* NAViewController.m in Sources */,
+				A11B6C5C19AE23170062FAF9 /* main.m in Sources */,
+				A11B6C6019AE23170062FAF9 /* NAAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A11B6C6919AE23170062FAF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A11B6C7B19AE23170062FAF9 /* NumberAvatarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A11B6C7319AE23170062FAF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A11B6C4B19AE23160062FAF9 /* NumberAvatar */;
+			targetProxy = A11B6C7219AE23170062FAF9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A11B6C5819AE23170062FAF9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A11B6C5919AE23170062FAF9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A11B6C6119AE23170062FAF9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A11B6C6219AE23170062FAF9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A11B6C7719AE23170062FAF9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A11B6C7819AE23170062FAF9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A11B6C7C19AE23170062FAF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A11B6C7D19AE23170062FAF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A11B6C7F19AE23170062FAF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE02E5BB18DF4B27B78A4684 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NumberAvatar/NumberAvatar-Prefix.pch";
+				INFOPLIST_FILE = "NumberAvatar/NumberAvatar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "09F0FCE1-8EA9-4872-9883-B4971C849FA2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A11B6C8019AE23170062FAF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE02E5BB18DF4B27B78A4684 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Qfpay Technology Company Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Qfpay Technology Company Limited";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NumberAvatar/NumberAvatar-Prefix.pch";
+				INFOPLIST_FILE = "NumberAvatar/NumberAvatar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "09F0FCE1-8EA9-4872-9883-B4971C849FA2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A11B6C8219AE23170062FAF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NumberAvatar.app/NumberAvatar";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NumberAvatar/NumberAvatar-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NumberAvatarTests/NumberAvatarTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A11B6C8319AE23170062FAF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NumberAvatar.app/NumberAvatar";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NumberAvatar/NumberAvatar-Prefix.pch";
+				INFOPLIST_FILE = "NumberAvatarTests/NumberAvatarTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A11B6C4719AE23160062FAF9 /* Build configuration list for PBXProject "NumberAvatar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A11B6C7C19AE23170062FAF9 /* Debug */,
+				A11B6C7D19AE23170062FAF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A11B6C7E19AE23170062FAF9 /* Build configuration list for PBXNativeTarget "NumberAvatar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A11B6C7F19AE23170062FAF9 /* Debug */,
+				A11B6C8019AE23170062FAF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A11B6C8119AE23170062FAF9 /* Build configuration list for PBXNativeTarget "NumberAvatarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A11B6C8219AE23170062FAF9 /* Debug */,
+				A11B6C8319AE23170062FAF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A11B6C4419AE23160062FAF9 /* Project object */;
+}
