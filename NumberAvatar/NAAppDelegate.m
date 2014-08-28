@@ -7,6 +7,8 @@
 //
 
 #import "NAAppDelegate.h"
+#import <ShareSDK/ShareSDK.h>
+#import "WXApi.h"
 
 @implementation NAAppDelegate
 
@@ -21,7 +23,44 @@
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     [application setStatusBarHidden:NO];
     
+    [MobClick startWithAppkey:UMENG_APP_KEY reportPolicy:SEND_INTERVAL channelId:@"AppStore"];
+    
+    [MobClick setAppVersion:AppVersionShort];
+    [MobClick checkUpdate:@"发现新版本" cancelButtonTitle:@"跳过" otherButtonTitles:@"安装"];
+    
+     [self shareSDKSetup];
+    
     return YES;
+}
+
+#pragma mark ShareSDK Setup
+
+- (void)shareSDKSetup{
+    
+    [ShareSDK registerApp:@"2e54015892f2" useAppTrusteeship:NO];
+    [ShareSDK ssoEnabled:YES];
+    [ShareSDK allowExchangeDataEnabled:YES];
+    [ShareSDK setStatPolicy:SSCStatPolicyLimitSize];
+    
+    //[ShareSDK connectSinaWeiboWithAppKey:SinaWeiboKey appSecret:SinaWeiboSecret redirectUri:@"http://www.qianmiaomiao.com"];
+    
+    [ShareSDK connectWeChatWithAppId:@"wx4868b35061f87885" wechatCls:[WXApi class]];
+    
+    //[ShareSDK connectQZoneWithAppKey:QQSpaceKey appSecret:QQSpaceSecret qqApiInterfaceCls:nil tencentOAuthCls:nil];
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return [ShareSDK handleOpenURL:url
+                        wxDelegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [ShareSDK handleOpenURL:url
+                 sourceApplication:sourceApplication
+                        annotation:annotation
+                        wxDelegate:self];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -8,13 +8,19 @@
 
 #import "NAViewController.h"
 #import <AviarySDK/AviarySDK.h>
+#import <ShareSDK/ShareSDK.h>
 #import <iAd/iAd.h>
+#import "WXApi.h"
 
 @interface NAViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,AFPhotoEditorControllerDelegate,ADBannerViewDelegate>
 {
     UIImagePickerController *imagePickerController;
     UIImage *finalImage;
     BOOL bannerIsVisible;
+    NSString *shareUrl;
+    NSString *shareTitle;
+    NSString *shareContent;
+    NSString *shareImageUrl;
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
@@ -41,6 +47,11 @@
     });
     
     _adView.delegate = self;
+    
+    shareUrl = @"http://fir.im/jbtx";
+    shareTitle = @"看到这个头像,整个人都不好了...";
+    shareContent = @"让朋友圈小伙伴们都抓狂的#秘密#";
+    shareImageUrl = @"http://ts-image1.qiniudn.com/share_image@2x.png";
 }
 
 - (void)bannerViewWillLoadAd:(ADBannerView *)banner
@@ -55,15 +66,20 @@
 
 - (IBAction)doneButtonAction:(id)sender
 {
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"保存成功" message:@"快去相册看看吧" delegate:self cancelButtonTitle:@"赞" otherButtonTitles:nil, nil];
+//    [alertView show];
+    
     [self saveViewToImage];
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"保存成功" message:@"快去相册看看吧" delegate:self cancelButtonTitle:@"赞" otherButtonTitles:nil, nil];
+    UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"已经给小主存到相册啦~" message:@""];
+
+    [alertView bk_addButtonWithTitle:@"分享到朋友圈" handler:^{
+         [self sendToTimeLine];
+    }];
+    [alertView bk_addButtonWithTitle:@"分享微信好友" handler:^{
+         [self sendToSession];
+    }];
     [alertView show];
-    
-    //UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"" message:@""];
-    //[alertView bk_addButtonWithTitle:@"保存到相册" handler:^{
-    
-    //}];
     
 }
 
@@ -187,6 +203,74 @@
     UIGraphicsEndImageContext();
     
     return image;
+}
+
+-(void)sendToSession;
+{
+    id<ISSContent> content = [ShareSDK content:shareContent
+                                defaultContent:nil
+                                         image:[ShareSDK imageWithUrl:shareImageUrl]
+                                         title:shareTitle
+                                           url:shareUrl
+                                   description:nil
+                                     mediaType:SSPublishContentMediaTypeApp];
+    
+    [content addWeixinSessionUnitWithType:[NSNumber numberWithInt:SSPublishContentMediaTypeNews]
+                                  content:shareContent
+                                    title:shareTitle
+                                      url:shareUrl
+                                    image:[ShareSDK imageWithUrl:shareImageUrl]
+                             musicFileUrl:nil
+                                  extInfo:nil
+                                 fileData:nil
+                             emoticonData:nil];
+    
+    id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
+                                                         allowCallback:YES
+                                                         authViewStyle:SSAuthViewStyleFullScreenPopup
+                                                          viewDelegate:nil
+                                               authManagerViewDelegate:nil];
+    
+    [ShareSDK shareContent:content
+                      type:ShareTypeWeixiSession
+               authOptions:authOptions
+             statusBarTips:YES
+                    result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                    }];
+}
+
+- (void)sendToTimeLine;
+{
+    id<ISSContent> content = [ShareSDK content:shareContent
+                                defaultContent:nil
+                                         image:[ShareSDK imageWithUrl:shareImageUrl]
+                                         title:shareTitle
+                                           url:shareUrl
+                                   description:nil
+                                     mediaType:SSPublishContentMediaTypeApp];
+    
+    [content addWeixinTimelineUnitWithType:[NSNumber numberWithInt:SSPublishContentMediaTypeNews]
+                                   content:shareContent
+                                     title:shareTitle
+                                       url:shareUrl
+                                     image:[ShareSDK imageWithUrl:shareImageUrl]
+                              musicFileUrl:nil
+                                   extInfo:nil
+                                  fileData:nil
+                              emoticonData:nil];
+    
+    id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
+                                                         allowCallback:YES
+                                                         authViewStyle:SSAuthViewStyleFullScreenPopup
+                                                          viewDelegate:nil
+                                               authManagerViewDelegate:nil];
+    
+    [ShareSDK shareContent:content
+                      type:ShareTypeWeixiTimeline
+               authOptions:authOptions
+             statusBarTips:YES
+                    result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                    }];
 }
 
 - (void)didReceiveMemoryWarning

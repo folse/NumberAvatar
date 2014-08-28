@@ -71,7 +71,7 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"
 #define UmengCrashEnable 1
 #define UmengLogEnable 0
 #define UmengChannelId  @"App Store"
-#define UMENG_APP_KEY  @"53c5206c56240b45ff08f61e"
+#define UMENG_APP_KEY  @"53ff4171fd98c58f200100e6"
 
 #define FONT(x) [UIFont systemFontOfSize:x]
 
