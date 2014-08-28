@@ -58,6 +58,8 @@
 		A11B6C7A19AE23170062FAF9 /* NumberAvatarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NumberAvatarTests.m; sourceTree = "<group>"; };
 		A11B6C8419AE270D0062FAF9 /* ProjectSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectSettings.h; sourceTree = "<group>"; };
 		A11B6C8519AE270D0062FAF9 /* ProjectSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectSettings.m; sourceTree = "<group>"; };
+		A125F51D19AF27F200D566C1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		A125F51E19AF27F200D566C1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		A1B43C8719AE57C00056D534 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		CE02E5BB18DF4B27B78A4684 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D9D8A178B1CB41BAA768B133 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +234,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = A11B6C4319AE23160062FAF9;
 			productRefGroup = A11B6C4D19AE23170062FAF9 /* Products */;
@@ -333,6 +336,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A11B6C5919AE23170062FAF9 /* en */,
+				A125F51D19AF27F200D566C1 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -349,6 +353,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A11B6C7819AE23170062FAF9 /* en */,
+				A125F51E19AF27F200D566C1 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
