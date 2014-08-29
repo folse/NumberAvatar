@@ -50,7 +50,7 @@
     
     shareUrl = @"http://fir.im/jbtx";
     shareTitle = @"看到这个头像,整个人都不好了...";
-    shareContent = @"让朋友圈小伙伴们都抓狂的#秘密#";
+    shareContent = @"让朋友圈的小伙伴们都抓狂的#秘密#";
     shareImageUrl = @"http://ts-image1.qiniudn.com/share_image@2x.png";
 }
 
@@ -71,7 +71,7 @@
     
     [self saveViewToImage];
     
-    UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"已经给小主存到相册啦~" message:@""];
+    UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"已经帮小主存到相册啦~" message:@""];
 
     [alertView bk_addButtonWithTitle:@"分享到朋友圈" handler:^{
          [self sendToTimeLine];

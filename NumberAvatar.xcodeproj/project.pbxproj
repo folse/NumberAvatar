@@ -24,7 +24,6 @@
 		A11B6C8619AE270D0062FAF9 /* ProjectSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = A11B6C8519AE270D0062FAF9 /* ProjectSettings.m */; };
 		A1B43C8819AE57C00056D534 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B43C8719AE57C00056D534 /* iAd.framework */; };
 		A1B43CA819AF7E2A0056D534 /* QQConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B43C8B19AF7E2A0056D534 /* QQConnection.framework */; };
-		A1B43CA919AF7E2B0056D534 /* QZoneConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B43C8C19AF7E2A0056D534 /* QZoneConnection.framework */; };
 		A1B43CAA19AF7E2B0056D534 /* SinaWeiboConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B43C8D19AF7E2A0056D534 /* SinaWeiboConnection.framework */; };
 		A1B43CAB19AF7E2B0056D534 /* WeChatConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B43C8E19AF7E2A0056D534 /* WeChatConnection.framework */; };
 		A1B43CAC19AF7E2B0056D534 /* AGCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B43C9019AF7E2A0056D534 /* AGCommon.framework */; };
@@ -88,7 +87,6 @@
 		A125F51E19AF27F200D566C1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		A1B43C8719AE57C00056D534 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		A1B43C8B19AF7E2A0056D534 /* QQConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QQConnection.framework; sourceTree = "<group>"; };
-		A1B43C8C19AF7E2A0056D534 /* QZoneConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QZoneConnection.framework; sourceTree = "<group>"; };
 		A1B43C8D19AF7E2A0056D534 /* SinaWeiboConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SinaWeiboConnection.framework; sourceTree = "<group>"; };
 		A1B43C8E19AF7E2A0056D534 /* WeChatConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WeChatConnection.framework; sourceTree = "<group>"; };
 		A1B43C9019AF7E2A0056D534 /* AGCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AGCommon.framework; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 				A11B6C5219AE23170062FAF9 /* CoreGraphics.framework in Frameworks */,
 				A1B43CAA19AF7E2B0056D534 /* SinaWeiboConnection.framework in Frameworks */,
 				A1B43CAF19AF7E2B0056D534 /* ShareSDKCoreService.framework in Frameworks */,
-				A1B43CA919AF7E2B0056D534 /* QZoneConnection.framework in Frameworks */,
 				A11B6C5419AE23170062FAF9 /* UIKit.framework in Frameworks */,
 				A1B43CB619AF7E2B0056D534 /* ShareSDK.framework in Frameworks */,
 				A1B43CB319AF7E2B0056D534 /* libSinaWeiboSDK.a in Frameworks */,
@@ -270,7 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				A1B43C8B19AF7E2A0056D534 /* QQConnection.framework */,
-				A1B43C8C19AF7E2A0056D534 /* QZoneConnection.framework */,
 				A1B43C8D19AF7E2A0056D534 /* SinaWeiboConnection.framework */,
 				A1B43C8E19AF7E2A0056D534 /* WeChatConnection.framework */,
 			);
@@ -619,10 +615,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE02E5BB18DF4B27B78A4684 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = armv7;
+				ARCHS = (
+					armv7,
+					armv7s,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NumberAvatar/ShareSDK/Connection",
@@ -639,8 +639,30 @@
 					"$(PROJECT_DIR)/NumberAvatar/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/NumberAvatar/ShareSDK/Extend/WeChatSDK",
 				);
+				OTHER_LDFLAGS = (
+					"-lMobClickLibrary",
+					"-lsqlite3",
+					"-lz",
+					"-framework",
+					Accelerate,
+					"-framework",
+					AviarySDK,
+					"-framework",
+					CoreData,
+					"-framework",
+					ImageIO,
+					"-framework",
+					MessageUI,
+					"-framework",
+					OpenGLES,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					StoreKit,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c8d18ab2-e2b4-436b-a83b-b94bbf4cceff";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -650,7 +672,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE02E5BB18DF4B27B78A4684 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = armv7;
+				ARCHS = (
+					armv7,
+					armv7s,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Qfpay Technology Company Limited";
@@ -671,8 +696,30 @@
 					"$(PROJECT_DIR)/NumberAvatar/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/NumberAvatar/ShareSDK/Extend/WeChatSDK",
 				);
+				OTHER_LDFLAGS = (
+					"-lMobClickLibrary",
+					"-lsqlite3",
+					"-lz",
+					"-framework",
+					Accelerate,
+					"-framework",
+					AviarySDK,
+					"-framework",
+					CoreData,
+					"-framework",
+					ImageIO,
+					"-framework",
+					MessageUI,
+					"-framework",
+					OpenGLES,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					StoreKit,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c8d18ab2-e2b4-436b-a83b-b94bbf4cceff";
+				PROVISIONING_PROFILE = "7c165593-676b-451e-90ae-daee7ac77ce9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
