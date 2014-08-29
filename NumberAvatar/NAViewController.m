@@ -31,11 +31,11 @@
 
 @implementation NAViewController
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-}
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+//}
 
 - (void)viewDidLoad
 {
@@ -49,9 +49,22 @@
     _adView.delegate = self;
     
     shareUrl = @"http://fir.im/jbtx";
-    shareTitle = @"看到这个头像,整个人都不好了...";
-    shareContent = @"让朋友圈的小伙伴们都抓狂的#秘密#";
+    shareTitle = @"看着我的新头像,是不是整个人都不好了? ";
+    shareContent = @"让朋友圈的小伙伴们都抓狂的#秘密#...";
     shareImageUrl = @"http://ts-image1.qiniudn.com/share_image@2x.png";
+    
+    [self removeNavigationBarShadow];
+}
+
+-(void)removeNavigationBarShadow
+{
+    for (UIView *view in self.navigationController.navigationBar.subviews) {
+        for (UIView *view2 in view.subviews) {
+            if ([view2 isKindOfClass:[UIImageView class]] && view2.frame.size.width == 320) {
+                [view2 removeFromSuperview];
+            }
+        }
+    }
 }
 
 - (void)bannerViewWillLoadAd:(ADBannerView *)banner
@@ -65,19 +78,16 @@
 }
 
 - (IBAction)doneButtonAction:(id)sender
-{
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"保存成功" message:@"快去相册看看吧" delegate:self cancelButtonTitle:@"赞" otherButtonTitles:nil, nil];
-//    [alertView show];
-    
-    [self saveViewToImage];
-    
-    UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"已经帮小主存到相册啦~" message:@""];
-
+{    
+    UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"生成成功" message:@""];
     [alertView bk_addButtonWithTitle:@"分享到朋友圈" handler:^{
          [self sendToTimeLine];
     }];
-    [alertView bk_addButtonWithTitle:@"分享微信好友" handler:^{
+    [alertView bk_addButtonWithTitle:@"发给微信好友" handler:^{
          [self sendToSession];
+    }];
+    [alertView bk_addButtonWithTitle:@"保存到相册以便设置头像" handler:^{
+        [self saveViewToImage];
     }];
     [alertView show];
     
@@ -112,10 +122,10 @@
     AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:imageToEdit];
     [AFPhotoEditorCustomization setToolOrder:@[kAFEffects,kAFCrop,kAFStickers, kAFDraw, kAFText,kAFOrientation,kAFEnhance,kAFAdjustments, kAFSharpness, kAFRedeye, kAFWhiten, kAFBlemish, kAFMeme, kAFFrames, kAFFocus]];
     [AFPhotoEditorCustomization setStatusBarStyle:UIStatusBarStyleLightContent];
-    [AFPhotoEditorCustomization setNavBarImage:[self imageWithColor:APP_COLOR andSize:CGSizeMake(320, 44)]];
+//    [AFPhotoEditorCustomization setNavBarImage:[self imageWithColor:APP_COLOR andSize:CGSizeMake(320, 44)]];
     [AFPhotoEditorCustomization setLeftNavigationBarButtonTitle:@"取消"];
     [AFPhotoEditorCustomization setRightNavigationBarButtonTitle:@"完成"];
-    [AFPhotoEditorCustomization setCropToolCustomEnabled:YES];
+    [AFPhotoEditorCustomization setCropToolCustomEnabled:NO];
     [AFPhotoEditorCustomization setCropToolPresets:@[@{kAFCropPresetName:@"方形头像", kAFCropPresetWidth:@1, kAFCropPresetHeight:@1}]];
     [editorController setDelegate:self];
     [self presentViewController:editorController animated:YES completion:nil];

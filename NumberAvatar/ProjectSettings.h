@@ -24,7 +24,7 @@
 #define USER_ID [USER valueForKey:@"userId"]
 #define USER_NAME [USER valueForKey:@"userName"]
 #define USER_LOGIN [USER boolForKey:@"userLogined"]
-#define APP_COLOR [UIColor colorWithRed:30/255.0 green:213/255.0 blue:156/255.0 alpha:1.0]
+#define APP_COLOR [UIColor colorWithRed:255/255.0 green:115/255.0 blue:158/255.0 alpha:1.0]
 
 #define FIRST_LOAD [USER boolForKey:@"isFirstLoad"]
 #define PAGE_ID [USER valueForKey:@"pageId"]
