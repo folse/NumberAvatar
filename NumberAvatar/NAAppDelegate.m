@@ -17,15 +17,15 @@
     // Override point for customization after application launch.
     
     [[UINavigationBar appearance] setTintColor:APP_COLOR];
-    //[[UINavigationBar appearance] setBarTintColor:APP_COLOR];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:248/255.0 green:246/255.0 blue:246/255.0 alpha:1]];
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:APP_COLOR,NSForegroundColorAttributeName,[UIFont fontWithName:@"Helvetica" size:18.0],NSFontAttributeName,nil]];
     
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     [application setStatusBarHidden:NO];
     
-    [MobClick startWithAppkey:UMENG_APP_KEY reportPolicy:SEND_INTERVAL channelId:@"AppStore"];
+    [MobClick startWithAppkey:UMENG_APP_KEY reportPolicy:SEND_INTERVAL channelId:@"App Store"];
     
-    [MobClick setAppVersion:AppVersionShort];
+    //[MobClick setAppVersion:AppVersionShort];
     [MobClick checkUpdate:@"发现新版本" cancelButtonTitle:@"跳过" otherButtonTitles:@"安装"];
     
      [self shareSDKSetup];
@@ -37,7 +37,7 @@
 
 - (void)shareSDKSetup{
     
-    [ShareSDK registerApp:@"2e54015892f2" useAppTrusteeship:NO];
+    [ShareSDK registerApp:@"2e54015892f2"];
     [ShareSDK ssoEnabled:YES];
     [ShareSDK allowExchangeDataEnabled:YES];
     [ShareSDK setStatPolicy:SSCStatPolicyLimitSize];

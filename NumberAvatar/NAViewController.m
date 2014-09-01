@@ -74,23 +74,52 @@
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
+    s(@"iAD:")
     s(error)
 }
 
 - (IBAction)doneButtonAction:(id)sender
-{    
-    UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"生成成功" message:@""];
+{
+    [self.view endEditing:YES];
+
+    [self saveViewToImage:YES];
+    
+    UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"保存成功" message:@"已经保存到手机相册了"];
+
     [alertView bk_addButtonWithTitle:@"分享到朋友圈" handler:^{
          [self sendToTimeLine];
     }];
     [alertView bk_addButtonWithTitle:@"发给微信好友" handler:^{
          [self sendToSession];
     }];
-    [alertView bk_addButtonWithTitle:@"保存到相册以便设置头像" handler:^{
-        [self saveViewToImage];
+    [alertView bk_setCancelButtonWithTitle:@"这就去换头像" handler:^{
+        
     }];
+
     [alertView show];
+}
+
+- (IBAction)shareButtonAction:(id)sender
+{
+    [self.view endEditing:YES];
     
+    [self saveViewToImage:NO];
+    
+    UIActionSheet *shareActionSheet = [UIActionSheet bk_actionSheetWithTitle:@""];
+    
+    [shareActionSheet bk_addButtonWithTitle:@"分享到朋友圈" handler:^{
+        [self sendToTimeLine];
+    }];
+    
+    [shareActionSheet bk_addButtonWithTitle:@"发给微信好友" handler:^{
+        [self sendToSession];
+    }];
+    
+    [shareActionSheet bk_setCancelButtonWithTitle:@"取消" handler:^{
+        
+    }];
+
+    [shareActionSheet showInView:self.view];
 }
 
 - (IBAction)openCameraAction:(id)sender
@@ -184,7 +213,7 @@
     [self.view endEditing:YES];
 }
 
-- (void)saveViewToImage {
+- (void)saveViewToImage:(BOOL)needSaveToAlbum {
     
     UIGraphicsBeginImageContext(self.view.bounds.size);
     
@@ -196,7 +225,9 @@
     
     finalImage = [self cropAvatarView:screenImage];
     
-    UIImageWriteToSavedPhotosAlbum(finalImage, nil, nil,nil);
+    if (needSaveToAlbum) {
+        UIImageWriteToSavedPhotosAlbum(finalImage, nil, nil,nil);
+    }
 }
 
 -(UIImage *)cropAvatarView:(UIImage *)image
@@ -219,7 +250,7 @@
 {
     id<ISSContent> content = [ShareSDK content:shareContent
                                 defaultContent:nil
-                                         image:[ShareSDK imageWithUrl:shareImageUrl]
+                                         image:[ShareSDK pngImageWithImage:finalImage]
                                          title:shareTitle
                                            url:shareUrl
                                    description:nil
@@ -229,7 +260,7 @@
                                   content:shareContent
                                     title:shareTitle
                                       url:shareUrl
-                                    image:[ShareSDK imageWithUrl:shareImageUrl]
+                                    image:[ShareSDK pngImageWithImage:finalImage]
                              musicFileUrl:nil
                                   extInfo:nil
                                  fileData:nil
@@ -253,7 +284,7 @@
 {
     id<ISSContent> content = [ShareSDK content:shareContent
                                 defaultContent:nil
-                                         image:[ShareSDK imageWithUrl:shareImageUrl]
+                                         image:[ShareSDK pngImageWithImage:finalImage]
                                          title:shareTitle
                                            url:shareUrl
                                    description:nil
@@ -263,7 +294,7 @@
                                    content:shareContent
                                      title:shareTitle
                                        url:shareUrl
-                                     image:[ShareSDK imageWithUrl:shareImageUrl]
+                                     image:[ShareSDK pngImageWithImage:finalImage]
                               musicFileUrl:nil
                                    extInfo:nil
                                   fileData:nil
