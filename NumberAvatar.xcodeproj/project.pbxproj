@@ -713,7 +713,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7c165593-676b-451e-90ae-daee7ac77ce9";
+				PROVISIONING_PROFILE = "c8d18ab2-e2b4-436b-a83b-b94bbf4cceff";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

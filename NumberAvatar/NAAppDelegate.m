@@ -44,7 +44,7 @@
     
     //[ShareSDK connectSinaWeiboWithAppKey:SinaWeiboKey appSecret:SinaWeiboSecret redirectUri:@"http://www.qianmiaomiao.com"];
     
-    [ShareSDK connectWeChatWithAppId:@"wx4868b35061f87885" wechatCls:[WXApi class]];
+    [ShareSDK connectWeChatWithAppId:@"wx19afb31bebf3898d" wechatCls:[WXApi class]];
     
     //[ShareSDK connectQZoneWithAppKey:QQSpaceKey appSecret:QQSpaceSecret qqApiInterfaceCls:nil tencentOAuthCls:nil];
 }
