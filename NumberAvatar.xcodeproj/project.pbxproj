@@ -385,7 +385,7 @@
 				ORGANIZATIONNAME = folse;
 				TargetAttributes = {
 					A11B6C4B19AE23160062FAF9 = {
-						DevelopmentTeam = 6XX8659PN2;
+						DevelopmentTeam = V68CP8VT5Z;
 					};
 					A11B6C6C19AE23170062FAF9 = {
 						TestTargetID = A11B6C4B19AE23160062FAF9;
@@ -672,8 +672,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Qfpay Technology Company Limited";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Qfpay Technology Company Limited";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NumberAvatar/ShareSDK/Connection",
@@ -713,7 +713,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c8d18ab2-e2b4-436b-a83b-b94bbf4cceff";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
