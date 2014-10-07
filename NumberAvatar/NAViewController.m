@@ -275,7 +275,7 @@
     [ShareSDK shareContent:content
                       type:ShareTypeWeixiSession
                authOptions:authOptions
-             statusBarTips:YES
+             statusBarTips:NO
                     result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
                     }];
 }
@@ -309,7 +309,7 @@
     [ShareSDK shareContent:content
                       type:ShareTypeWeixiTimeline
                authOptions:authOptions
-             statusBarTips:YES
+             statusBarTips:NO
                     result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
                     }];
 }

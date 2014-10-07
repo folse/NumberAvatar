@@ -1,4 +1,4 @@
-platform:ios, '7.0'
+platform:ios, '8.0'
 pod 'UMeng', '2.2.1'
 pod 'BlocksKit', '2.2.5'
 pod 'AviarySDK', '4.0.1'
