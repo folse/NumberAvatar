@@ -87,10 +87,27 @@
     UIAlertView *alertView = [[UIAlertView alloc] bk_initWithTitle:@"保存成功" message:@"已经保存到手机相册了"];
 
     [alertView bk_addButtonWithTitle:@"分享到朋友圈" handler:^{
-         [self sendToTimeLine];
+        if ([WXApi isWXAppInstalled]) {
+            
+            [self sendToTimeLine];
+            
+        }else{
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"未发现微信应用,请安装微信再分享" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alertView show];
+        }
     }];
     [alertView bk_addButtonWithTitle:@"发给微信好友" handler:^{
-         [self sendToSession];
+        
+        if ([WXApi isWXAppInstalled]) {
+            
+            [self sendToSession];
+            
+        }else{
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"未发现微信应用,请安装微信再分享" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alertView show];
+        }
     }];
     [alertView bk_setCancelButtonWithTitle:@"这就去换头像" handler:^{
         
@@ -108,11 +125,29 @@
     UIActionSheet *shareActionSheet = [UIActionSheet bk_actionSheetWithTitle:@""];
     
     [shareActionSheet bk_addButtonWithTitle:@"分享到朋友圈" handler:^{
-        [self sendToTimeLine];
+        
+        if ([WXApi isWXAppInstalled]) {
+            
+            [self sendToTimeLine];
+            
+        }else{
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"未发现微信应用,请安装微信再分享" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alertView show];
+        }
     }];
     
     [shareActionSheet bk_addButtonWithTitle:@"发给微信好友" handler:^{
-        [self sendToSession];
+        
+        if ([WXApi isWXAppInstalled]) {
+            
+            [self sendToSession];
+            
+        }else{
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"未发现微信应用,请安装微信再分享" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alertView show];
+        }
     }];
     
     [shareActionSheet bk_setCancelButtonWithTitle:@"取消" handler:^{
