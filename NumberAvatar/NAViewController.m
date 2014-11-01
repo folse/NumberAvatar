@@ -25,7 +25,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UITextView *numberTextView;
-@property (weak, nonatomic) IBOutlet ADBannerView *adView;
+@property (weak, nonatomic) IBOutlet ADBannerView *adBanner;
 
 @end
 
@@ -46,14 +46,17 @@
         [AFPhotoEditorController setAPIKey:@"edc762d6aef61bea" secret:@"73429c0222c8298d"];
     });
     
-    _adView.delegate = self;
-    
-    shareUrl = @"http://fir.im/jbtx";
+    shareUrl = @"https://itunes.apple.com/us/app/tou-xiang+1-zai-tou-xiang/id913244062";
     shareTitle = @"看着我的新头像,是不是整个人都不好了? ";
     shareContent = @"让朋友圈的小伙伴们都抓狂的#秘密#...";
     shareImageUrl = @"http://ts-image1.qiniudn.com/share_image@2x.png";
     
     [self removeNavigationBarShadow];
+    
+    self.adBanner.delegate = self;
+    
+    // Initially hide the ad banner.
+    self.adBanner.alpha = 0.0;
 }
 
 -(void)removeNavigationBarShadow
@@ -67,15 +70,42 @@
     }
 }
 
-- (void)bannerViewWillLoadAd:(ADBannerView *)banner
-{
-    
+#pragma mark - AdBannerViewDelegate method implementation
+
+-(void)bannerViewWillLoadAd:(ADBannerView *)banner{
+    NSLog(@"Ad Banner will load ad.");
 }
 
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
-{
-    s(@"iAD:")
-    s(error)
+
+-(void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    NSLog(@"Ad Banner did load ad.");
+    
+    // Show the ad banner.
+    [UIView animateWithDuration:0.5 animations:^{
+        self.adBanner.alpha = 1.0;
+    }];
+}
+
+
+-(BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave{
+    NSLog(@"Ad Banner action is about to begin.");
+    
+    return YES;
+}
+
+
+-(void)bannerViewActionDidFinish:(ADBannerView *)banner{
+    NSLog(@"Ad Banner action did finish");
+}
+
+
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+    NSLog(@"Unable to show ads. Error: %@", [error localizedDescription]);
+    
+    // Hide the ad banner.
+    [UIView animateWithDuration:0.5 animations:^{
+        self.adBanner.alpha = 0.0;
+    }];
 }
 
 - (IBAction)doneButtonAction:(id)sender
